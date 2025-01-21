@@ -1,2 +1,44 @@
-node_modules
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+bin/
+lib/
+include/
+pyvenv.cfg
+
+# Database
 db.sqlite3
+*.db
+
+# Django secret settings (if you store secrets separately)
+.env
+*.env
+
+# Static and media files (if generated dynamically)
+staticfiles/
+media/
+
+# Logs
+logs/
+*.log
+
+# IDE / Editor files
+.vscode/
+*.swp
+*~ 
+.idea/
+*.sublime-workspace
+
+# Node modules (if using frontend dependencies)
+node_modules/
+
+# Compiled code
+*.so
+
+# Django migrations cache
+**/migrations/__pycache__/
