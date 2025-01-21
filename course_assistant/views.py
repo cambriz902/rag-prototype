@@ -46,7 +46,7 @@ def ask_question(request):
                             'score': results[0][1]
                         }
                     ],
-                    'open_ai_response': response.dict()
+                    'open_ai_response': response.model_dump()
                 }
             )
     except Exception as e:

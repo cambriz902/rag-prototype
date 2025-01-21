@@ -2,9 +2,7 @@ import json
 import pdb
 
 from openai import OpenAI
-from typing import Optional
-from pydantic import BaseModel, Field
-from typing import List, Literal
+from pydantic import BaseModel
 
 client = OpenAI()
 
@@ -13,9 +11,9 @@ class Response(BaseModel):
 
 class OpenAIClient:
 
-    def send_message_ask_question(self, question, embedded_content) -> dict:
+    def send_message_ask_question(self, question, embedded_content):
         systemContent = """
-            You're a teacher helping college students.
+            You're an enthusiastic teacher helping college students.
             Answer the following question based only on the following context:
             {embedded_content}
             """
@@ -29,7 +27,6 @@ class OpenAIClient:
             model="gpt-4o-mini",
             messages=apiMessages,
             response_format=Response
-        ) 
-        print(completion)
+        )
         return completion.choices[0].message.parsed
     
