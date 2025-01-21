@@ -2,17 +2,17 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 from django.shortcuts import render
 
-from recommendations.constants import CHROMA_PATH
+from backend.constants import CHROMA_PATH
 
 @api_view(['POST'])
-def recommend_papers(request):
+def relevant_papers(request):
     try:
         query = request.data.get("query", "").strip()
-        
+
         if not query:
             return Response(
                 status=status.HTTP_400_BAD_REQUEST,

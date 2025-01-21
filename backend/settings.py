@@ -14,6 +14,14 @@ from pathlib import Path
 
 import django_heroku
 
+import os
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
+
+# Retrieve OpenAI API key
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +37,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'recommendations'
+    'recommendations',
+    'backend',
+    'course_assistant'
 ]
 
 MIDDLEWARE = [

@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import recommend_papers
+from .views import relevant_papers
 
 urlpatterns = [
-    path('recommend-papers/', recommend_papers, name='recommend_papers')
+    path('relevant-papers/', relevant_papers, name='relevant_papers')
 ]
